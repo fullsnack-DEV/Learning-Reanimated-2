@@ -1,25 +1,19 @@
-import { blue, hotpink } from "color-name";
-import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import OpacityAnimation from "./Components/OpacityAnimation";
-import ScrollViewAnimations from "./Components/ScrollViewanimations";
-import FlatlistAnimation from "./Components/FlatlistAnimation";
+import React from "react";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomePage from "./Pages/HomePage";
+
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <FlatlistAnimation />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator headerMode={false}>
+        <Stack.Screen name="home" component={HomePage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 //We have to pass the styles we are writing using useAnimtedstyles to Our Animated View
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

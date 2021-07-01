@@ -1,5 +1,5 @@
 //Wrapping the Flatlist in the Animated Flatlist
-import { clamp } from "lodash";
+
 import React, { useRef } from "react";
 import {
   View,
@@ -78,6 +78,5 @@ const styles = StyleSheet.create({
     width: width - 200,
     resizeMode: "cover",
     borderRadius: 20,
-    backgroundColor: "red",
   },
 });
