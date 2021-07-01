@@ -1,15 +1,14 @@
 import { blue, hotpink } from "color-name";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import OpacityAnimation from "./Components/OpacityAnimation";
-//importing a USe shared VAlue from Reanimated
-
+import ScrollViewAnimations from "./Components/ScrollViewanimations";
+import FlatlistAnimation from "./Components/FlatlistAnimation";
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <OpacityAnimation />
+      <FlatlistAnimation />
     </View>
   );
 }
