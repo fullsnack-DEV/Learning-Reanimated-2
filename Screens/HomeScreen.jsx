@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import FlatlistAnimation from "../Components/FlatlistAnimation";
+import Swiping from "../Components/Swiping";
 
 export default function HomePage() {
   return (
     <View style={styles.container}>
+      {/* <Swiping  /> */}
       <FlatlistAnimation />
     </View>
   );
@@ -13,8 +15,14 @@ export default function HomePage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
   },
 });
+
+//Lets define the Structure of the Screens
+//Tabs
+// 1>Home  2>fav  3>Ticket  4>profile
+//install expo tabs
+//turn on the Auto import
