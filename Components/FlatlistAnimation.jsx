@@ -9,6 +9,7 @@ import {
   Image,
   Text,
   Animated,
+  TouchableWithoutFeedback,
 } from "react-native";
 import Movies from "../Components/Data/data";
 import Svg, { Text as BoldText } from "react-native-svg";
@@ -32,7 +33,7 @@ const { height, width } = Dimensions.get("screen");
 const ITEM_SIZE = width * 0.72;
 const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
-export default function FlatlistAnimation() {
+export default function FlatlistAnimation({ navigation }) {
   const [movies] = useState([{ key: "left-s" }, ...Movies, { key: "right-s" }]);
   let [fontsloaded, error] = useFonts({
     Lato_100Thin,
@@ -87,65 +88,70 @@ export default function FlatlistAnimation() {
           });
           return (
             <View style={{ width: ITEM_SIZE }}>
-              <View style={styles.imagecontainer}>
-                <Animated.Image
-                  style={[
-                    styles.image,
-                    {
-                      transform: [{ rotateZ: translateX }],
-                      position: "relative",
-                    },
-                  ]}
-                  source={{ uri: item.image }}
-                />
-                <Svg
-                  style={{
-                    position: "absolute",
-                    top: 50,
+              <TouchableWithoutFeedback
+                onPress={() => navigation.navigate("Detail")}
+              >
+                <View style={styles.imagecontainer}>
+                  <Animated.Image
+                    style={[
+                      styles.image,
+                      {
+                        transform: [{ rotateZ: translateX }],
+                        position: "relative",
+                      },
+                    ]}
+                    source={{ uri: item.image }}
+                  />
 
-                    transform: [{ translateX: -18 }],
-
-                    right: 25,
-                  }}
-                  height="250%"
-                  width="100%"
-                  viewBox="0 0 80 80"
-                >
-                  <BoldText
-                    stroke="#fff"
-                    strokeWidth="1"
-                    fill="#000"
-                    color="#fff"
-                    fontSize="80"
-                    fontWeight="bold"
-                    fontStyle="oblique"
-                  >
-                    {index}
-                  </BoldText>
-                </Svg>
-                <View
-                  style={{
-                    position: "absolute",
-                    backgroundColor: "yellow",
-                    top: 325,
-                    borderRadius: 10,
-                    padding: 5,
-                    width: 90,
-                    height: 30,
-                  }}
-                >
-                  <Text
+                  <Svg
                     style={{
-                      fontSize: 15,
-                      color: "orangered",
-                      textAlign: "center",
-                      textAlignVertical: "center",
+                      position: "absolute",
+                      top: 50,
+
+                      transform: [{ translateX: -18 }],
+
+                      right: 25,
+                    }}
+                    height="250%"
+                    width="100%"
+                    viewBox="0 0 80 80"
+                  >
+                    <BoldText
+                      stroke="#fff"
+                      strokeWidth="1"
+                      fill="#000"
+                      color="#fff"
+                      fontSize="80"
+                      fontWeight="bold"
+                      fontStyle="oblique"
+                    >
+                      {index}
+                    </BoldText>
+                  </Svg>
+                  <View
+                    style={{
+                      position: "absolute",
+                      backgroundColor: "yellow",
+                      top: 325,
+                      borderRadius: 10,
+                      padding: 5,
+                      width: 90,
+                      height: 30,
                     }}
                   >
-                    IMDB
-                  </Text>
+                    <Text
+                      style={{
+                        fontSize: 15,
+                        color: "orangered",
+                        textAlign: "center",
+                        textAlignVertical: "center",
+                      }}
+                    >
+                      IMDB
+                    </Text>
+                  </View>
                 </View>
-              </View>
+              </TouchableWithoutFeedback>
             </View>
           );
         }}
