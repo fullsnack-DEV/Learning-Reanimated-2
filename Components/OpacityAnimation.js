@@ -10,6 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 export default function OpacityAnimation() {
+  //importing a USe shared VAlue from Reanimated
   //opacity Animation with React Reanimated 2
   //use Shared Value is a Hook which let handle the value from the UI thread /Workets
   //with use Animated Style we can create a style which is similar to StySheet

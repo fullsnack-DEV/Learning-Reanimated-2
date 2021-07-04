@@ -3,11 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 import FlatlistAnimation from "../Components/FlatlistAnimation";
 import Swiping from "../Components/Swiping";
 
-export default function HomePage() {
+export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
       {/* <Swiping  /> */}
-      <FlatlistAnimation />
+
+      <FlatlistAnimation navigation={navigation} />
     </View>
   );
 }
@@ -15,7 +16,7 @@ export default function HomePage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#141414",
     alignItems: "center",
     justifyContent: "center",
   },
