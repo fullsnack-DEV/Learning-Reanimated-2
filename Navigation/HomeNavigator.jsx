@@ -9,7 +9,12 @@ const Stack = createStackNavigator();
 
 export default function HomeNavigator() {
   return (
-    <Stack.Navigator headerMode={false}>
+    <Stack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {},
+      }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Detail" component={DetailScreen} />
       <Stack.Screen name="Ticket" component={TickeDetailScreen} />
