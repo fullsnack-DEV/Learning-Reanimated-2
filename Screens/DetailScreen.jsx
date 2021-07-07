@@ -18,7 +18,7 @@ export default function DetailPage() {
     >
       <View>
         <View style={styles.setswrapper}>
-          {seats.slice(0, 5).map((seat, index) => {
+          {seats.slice(0, 4).map((seat, index) => {
             return (
               <View style={{}}>
                 <View

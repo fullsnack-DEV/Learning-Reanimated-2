@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 0.8,
     justifyContent: "center",
-    backgroundColor: "#000",
+
     alignItems: "center",
   },
   flatlist: {
@@ -212,11 +212,9 @@ const styles = StyleSheet.create({
   },
   movielist: {
     flex: 0.62,
-    backgroundColor: "red",
   },
   cateogries: {
     flex: 0.12,
-    backgroundColor: "yellow",
   },
   catwrapper: {
     alignItems: "center",
@@ -226,7 +224,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     textAlignVertical: "center",
     marginRight: 15,
-    backgroundColor: "#20211E",
+
     textAlign: "center",
     borderColor: "#fff",
     borderWidth: 1,

@@ -16,7 +16,7 @@ export default function HomePage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2B5480",
+    backgroundColor: "#1A1A2E",
     alignItems: "center",
     justifyContent: "center",
   },
